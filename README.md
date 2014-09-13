@@ -9,11 +9,12 @@ How to use it
     from minipig.request import Request
     from minipig.executor import Executor
     from minipig.processor import AbstractProcessor
-    #define your request
+    
+    # define your request
     class MyRequest(Reqeust):
         ......
     
-    #define your processor
+    # define your processor
     class MyProcessor(AbstractProcessor):
         
         def accepted(self, request):
@@ -22,15 +23,15 @@ How to use it
         def process(self, request):
             ......
             
-    #register your processor
+    # register your processor
     
     Executor.get_instance().register_processor(MyProcessor())
     
     
-    #initial your request
-    my_request = MyRequest()
-    #handle this request with synchronous and in same thread.
-    #hdnel this request with asynchronous and in separate thread when async is True
+    # initial your request
+    m y_request = MyRequest()
+    # handle this request with synchronous and in same thread.
+    # hdnel this request with asynchronous and in separate thread when async is True
     my_request.async = False #default is True
     Executor.get_instance().execute(my_request)
     
@@ -38,13 +39,14 @@ How to use it
 
     message be handle default is asynchronous, within separate thread. when your need to get the result of
     request, just call the method get_result of request. As following code:
+    
     my_request = MyRequest()
-    #hdnel this request with asynchronous and in separate thread.
+    # hdnel this request with asynchronous and in separate thread.
     Executor.get_instance().execute(my_request)
     
     .....
-    #need to wait the request through all processors,
-    #blocking until the request be completed
+    # need to wait the request through all processors,
+    # blocking until the request be completed
     result = my_request.get_result()
     
         
