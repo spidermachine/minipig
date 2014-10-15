@@ -45,6 +45,7 @@ class Executor:
         while True:
             request = self.queue.get()
             self.worker(request)
+            self.queue.task_done()
 
     def worker(self, request):
         """
