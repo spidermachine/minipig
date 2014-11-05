@@ -29,9 +29,9 @@ How to use it
     
     
     # initial your request
-    m y_request = MyRequest()
+    my_request = MyRequest()
     # handle this request with synchronous and in same thread.
-    # hdnel this request with asynchronous and in separate thread when async is True
+    # handle this request with asynchronous and in separated thread when async is True
     my_request.async = False #default is True
     Executor.get_instance().execute(my_request)
     
