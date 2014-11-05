@@ -37,11 +37,11 @@ How to use it
     
 **process message with asynchronous and separate thread
 
-    message be handle default is asynchronous, within separate thread. when your need to get the result of
+    message be handle default is asynchronous, within separated thread. when your need to get the result of
     request, just call the method get_result of request. As following code:
     
     my_request = MyRequest()
-    # hdnel this request with asynchronous and in separate thread.
+    # handle this request with asynchronous and in separated thread.
     Executor.get_instance().execute(my_request)
     
     .....
